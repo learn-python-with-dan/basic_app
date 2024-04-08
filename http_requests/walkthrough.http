@@ -1,0 +1,29 @@
+
+### Create User
+POST {{base_url}}/users
+Content-Type: application/json
+
+{
+  "name": "Dan"
+}
+
+> {%
+client.global.set('user_id', response.body.id);
+ %}
+
+
+### Get User
+GET {{base_url}}/users/{{user_id}}
+
+
+### Update User
+PUT {{base_url}}/users/{{user_id}}
+Content-Type: application/json
+
+{
+  "name": "Dan2"
+}
+
+
+### Delete User
+DELETE {{base_url}}/users/{{user_id}}
